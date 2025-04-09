@@ -2,68 +2,10 @@
 
 import { ScrollReveal } from '@/components/ScrollEffects'
 import Sidebar from '@/components/Sidebar'
+import { termsContentSections, termsSections } from '@/data';
 import React, { useEffect, useRef, useState } from 'react'
 
-const termsSections = [
-    { id: 'introduction', title: 'Introduction' },
-    { id: 'definitions', title: 'Definition and Interpretations' },
-    { id: 'acceptance', title: 'Acceptance of the Terms' },
-    { id: 'the-site', title: 'The Site' },
-    { id: 'our-services', title: 'Our Services' },
-    { id: 'payment', title: 'Payment' },
-    { id: 'our-liability', title: 'Our Liability' },
-    { id: 'termination', title: 'Termination' },
-    { id: 'intellectual-property', title: 'Intellectual Property Rights' },
-    { id: 'dispute-resolution', title: 'Dispute Resolution' },
-    { id: 'privacy-policy', title: 'Privacy Policy' },
-    { id: 'disclaimer', title: 'Disclaimer' },
-    { id: 'governing-law', title: 'Governing Law' },
-];
 
-export const termsContentSections = [
-    {
-        id: 'introduction',
-        title: 'Introduction',
-        content:
-            'Lorem ipsum dolor sit amet consectetur. Varius duis lacinia consequat posuere netus. Senectus sed ornare et iud in dui sodales. Nulla nisi euismod varius pellentesque sit egestas mi ultricies. Sit a dui non fermentum. Ornare quis elit imperdiet sodales aliquet nam. Bibendum orci arcuen purus vitae purus. Dignissim tristique in porttitor venenatis rutrum volutpat ultricies viverra.',
-    },
-    {
-        id: 'definitions',
-        title: 'Definition and Interpretations',
-        content:
-            'Lorem ipsum dolor sit amet consectetur. Varius duis lacinia consequat posuere netus. Senectus sed ornare et iud in dui sodales. Nulla nisi euismod varius pellentesque sit egestas mi ultricies. Sit a dui non fermentum. Ornare quis elit imperdiet sodales aliquet nam. Bibendum orci arcuen purus vitae purus. Dignissim tristique in porttitor venenatis rutrum volutpat ultricies viverra.',
-    },
-    {
-        id: 'acceptance',
-        title: 'Acceptance of the Terms',
-        content:
-            'Lorem ipsum dolor sit amet consectetur. Varius duis lacinia consequat posuere netus. Senectus sed ornare et iud in dui sodales. Nulla nisi euismod varius pellentesque sit egestas mi ultricies. Sit a dui non fermentum. Ornare quis elit imperdiet sodales aliquet nam. Bibendum orci arcuen purus vitae purus. Dignissim tristique in porttitor venenatis rutrum volutpat ultricies viverra.',
-    },
-    {
-        id: 'the-site',
-        title: 'The Site',
-        content:
-            'Lorem ipsum dolor sit amet consectetur. Varius duis lacinia consequat posuere netus. Senectus sed ornare et iud in dui sodales. Nulla nisi euismod varius pellentesque sit egestas mi ultricies. Sit a dui non fermentum. Ornare quis elit imperdiet sodales aliquet nam. Bibendum orci arcuen purus vitae purus. Dignissim tristique in porttitor venenatis rutrum volutpat ultricies viverra.',
-    },
-    {
-        id: 'our-services',
-        title: 'Our Services',
-        content:
-            'Lorem ipsum dolor sit amet consectetur. Varius duis lacinia consequat posuere netus. Senectus sed ornare et iud in dui sodales. Nulla nisi euismod varius pellentesque sit egestas mi ultricies. Sit a dui non fermentum. Ornare quis elit imperdiet sodales aliquet nam. Bibendum orci arcuen purus vitae purus. Dignissim tristique in porttitor venenatis rutrum volutpat ultricies viverra.',
-    },
-    {
-        id: 'payment',
-        title: 'Payment',
-        content:
-            'Lorem ipsum dolor sit amet consectetur. Varius duis lacinia consequat posuere netus. Senectus sed ornare et iud in dui sodales. Nulla nisi euismod varius pellentesque sit egestas mi ultricies. Sit a dui non fermentum. Ornare quis elit imperdiet sodales aliquet nam. Bibendum orci arcuen purus vitae purus. Dignissim tristique in porttitor venenatis rutrum volutpat ultricies viverra.',
-    },
-    {
-        id: 'our-liability',
-        title: 'Our Liability',
-        content:
-            'Lorem ipsum dolor sit amet consectetur. Varius duis lacinia consequat posuere netus. Senectus sed ornare et iud in dui sodales. Nulla nisi euismod varius pellentesque sit egestas mi ultricies. Sit a dui non fermentum. Ornare quis elit imperdiet sodales aliquet nam. Bibendum orci arcuen purus vitae purus. Dignissim tristique in porttitor venenatis rutrum volutpat ultricies viverra.',
-    },
-];
 
 const Terms = () => {
     const [activeId, setActiveId] = useState('introduction');
@@ -110,7 +52,7 @@ const Terms = () => {
         <section className='w-full min-h-screen flex flex-col overflow-x-hidden'>
             <ScrollReveal>
                 <div className='container mx-auto px-5 pt-5 pb-10'>
-                    <h1 className='text-base md:text-2xl text-center mb-10'>Terms of Service</h1>
+                    <h1 className='text-base md:text-3xl text-center mb-10 font-semibold'>Terms of Service</h1>
                     <div className='flex flex-row gap-10'>
                         <Sidebar
                             sections={termsSections}

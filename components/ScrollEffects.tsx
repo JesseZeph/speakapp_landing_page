@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useRef, ReactNode } from 'react'
-import { motion, useInView, useAnimation, Variants } from 'framer-motion'
+import { motion, useInView, useAnimation } from 'framer-motion'
 import Image from 'next/image'
 import RowText from './RowText';
 

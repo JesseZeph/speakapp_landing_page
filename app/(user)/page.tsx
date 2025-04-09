@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import Header from '@/components/Header'
 import appleLogo from '@/public/apple.png'
 import googleLogo from '@/public/playstore.png'
 import Image from 'next/image'
