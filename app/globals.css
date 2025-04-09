@@ -4,12 +4,21 @@
     --color-primary: #016F6E;
     --color-light: #016F6E0D;
     --color-heading: #36454F;
+    --font-nunito: 'Nunito', sans-serif;
+    --font-nunito-sans: 'Nunito Sans', sans-serif;
 }
 
+:root {
+    font-family: var(--font-nunito-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-nunito);
+}
 
 @layer components {
     .btn-primary {
-        @apply text-white bg-primary px-4 py-2 rounded-md
+        @apply text-white bg-primary px-4 py-2 rounded-md cursor-pointer
     }
 
     .curved-lines {

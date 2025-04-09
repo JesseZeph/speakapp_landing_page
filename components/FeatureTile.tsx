@@ -1,4 +1,3 @@
-// AnimatedFeatureTile.tsx
 
 import Image from 'next/image'
 import React from 'react'
@@ -92,14 +91,15 @@ const AnimatedFeatureTile = ({
                         </div>
                         <div className={`flex flex-row ${imageContainerClassName}`}>
                             {images.map((img, index) => (
-                                <Image
-                                    key={index}
-                                    src={img.src}
-                                    alt={img.alt || `feature-image-${index}`}
-                                    width={img.width || 300}
-                                    height={img.height || 300}
-                                    className={img.className || ''}
-                                />
+                                <div key={index} className="filter drop-shadow-lg">
+                                    <Image
+                                        src={img.src}
+                                        alt={img.alt || `feature-image-${index}`}
+                                        width={img.width || 300}
+                                        height={img.height || 300}
+                                        className={`${img.className || ''}`}
+                                    />
+                                </div>
                             ))}
                         </div>
                     </div>
@@ -142,6 +142,18 @@ const AnimatedFeatureTile = ({
                         {images.map((img, index) => (
                             floatingImages ? (
                                 <FloatingImage key={index} duration={4 + index * 0.5} distance={10}>
+                                    <div className="filter drop-shadow-lg">
+                                        <Image
+                                            src={img.src}
+                                            alt={img.alt || `feature-image-${index}`}
+                                            width={img.width || 300}
+                                            height={img.height || 300}
+                                            className={img.className || ''}
+                                        />
+                                    </div>
+                                </FloatingImage>
+                            ) : (
+                                <div key={index} className="filter drop-shadow-lg">
                                     <Image
                                         src={img.src}
                                         alt={img.alt || `feature-image-${index}`}
@@ -149,16 +161,7 @@ const AnimatedFeatureTile = ({
                                         height={img.height || 300}
                                         className={img.className || ''}
                                     />
-                                </FloatingImage>
-                            ) : (
-                                <Image
-                                    key={index}
-                                    src={img.src}
-                                    alt={img.alt || `feature-image-${index}`}
-                                    width={img.width || 300}
-                                    height={img.height || 300}
-                                    className={img.className || ''}
-                                />
+                                </div>
                             )
                         ))}
                     </ScrollSlideIn>
@@ -219,14 +222,15 @@ export const AnimatedFeatureTileReverse = ({
                         </div>
                         <div className={`flex flex-row relative translate-x-8 md:translate-x-0 mt-10 ${imageContainerClassName}`}>
                             {images.map((img, index) => (
-                                <Image
-                                    key={index}
-                                    src={img.src}
-                                    alt={img.alt || `feature-image-${index}`}
-                                    width={img.width || 300}
-                                    height={img.height || 300}
-                                    className={img.className || ''}
-                                />
+                                <div key={index} className="filter drop-shadow-lg">
+                                    <Image
+                                        src={img.src}
+                                        alt={img.alt || `feature-image-${index}`}
+                                        width={img.width || 300}
+                                        height={img.height || 300}
+                                        className={img.className || ''}
+                                    />
+                                </div>
                             ))}
                         </div>
                     </div>
@@ -269,24 +273,26 @@ export const AnimatedFeatureTileReverse = ({
                         {images.map((img, index) => (
                             floatingImages ? (
                                 <FloatingImage key={index} duration={4 + index * 0.5} distance={10}>
+                                    <div className="filter drop-shadow-lg">
+                                        <Image
+                                            src={img.src}
+                                            alt={img.alt || `feature-image-${index}`}
+                                            width={img.width || 300}
+                                            height={img.height || 300}
+                                            className={img.className || ''}
+                                        />
+                                    </div>
+                                </FloatingImage>
+                            ) : (
+                                <div key={index} className="filter drop-shadow-lg">
                                     <Image
-                                        key={index}
                                         src={img.src}
                                         alt={img.alt || `feature-image-${index}`}
                                         width={img.width || 300}
                                         height={img.height || 300}
                                         className={img.className || ''}
                                     />
-                                </FloatingImage>
-                            ) : (
-                                <Image
-                                    key={index}
-                                    src={img.src}
-                                    alt={img.alt || `feature-image-${index}`}
-                                    width={img.width || 300}
-                                    height={img.height || 300}
-                                    className={img.className || ''}
-                                />
+                                </div>
                             )
                         ))}
                     </ScrollSlideIn>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Nunito, Nunito_Sans } from "next/font/google";
 import "./globals.css";
 import clsx from "clsx";
+import Header from "@/components/Header";
 
 const nunito = Nunito({
   variable: "--font-nunito",
@@ -26,6 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="relative">
       <body className={clsx(nunito.variable, nunitoSans.variable)}>
+        <Header />
         {children}
       </body>
     </html>

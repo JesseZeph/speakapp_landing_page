@@ -9,7 +9,6 @@ import CurvedLines from '@/components/CurvedLines'
 import heroOne from '@/public/hero-one.png'
 import heroTwo from '@/public/hero-2.png'
 import therapist from '@/public/therapist-screen.png'
-import therapistTwo from '@/public/therapist-screen-2.png'
 import imageStack from '@/public/images-stack.png'
 import { motion } from 'framer-motion'
 import ProcessSteps from '@/components/ProcessSteps'
@@ -37,6 +36,10 @@ import {
     ScrollSlideIn,
     ScrollReveal
 } from '@/components/ScrollEffects'
+import Footer from '@/components/Footer'
+import { StepProvider } from '@/context/StepContext'
+import StepImages from '@/components/StepsImages'
+
 
 const Homepage = () => {
 
@@ -73,7 +76,6 @@ const Homepage = () => {
     }
     return (
         <div className='w-full h-screen flex flex-col overflow-x-hidden'>
-            <Header />
             <ScrollReveal>
 
                 <ScrollFadeIn>
@@ -104,40 +106,33 @@ const Homepage = () => {
                                     <p className='text-sm md:text-base'>500+ Users all over the world</p>
                                 </motion.div>
                             </motion.div>
-                            <motion.div initial="initial"
-                                animate="animate"
-                                variants={floatingAnimation} className='flex flex-row relative'>
-                                <Image src={heroOne} alt='hero-one' width={300} height={300} className='hidden md:block' />
-                                <Image src={heroTwo} alt='hero-two' width={300} height={300} className='pt-10 hidden lg:block' />
-                            </motion.div>
+                            <div className='flex flex-row relative'>
+                                <motion.div initial="initial"
+                                    animate="animate"
+                                    variants={floatingAnimation}>
+                                    <Image src={heroOne} alt='hero-one' width={300} height={300} className='hidden md:block filter' />
+                                </motion.div>
+                                <Image src={heroTwo} alt='hero-two' width={300} height={300} className='pt-10 hidden lg:block filter drop-shadow-lg' />
+
+                            </div>
+
+
                         </div>
                     </section>
 
                 </ScrollFadeIn>
-
                 <section className='container mx-auto px-4 md:px-6'>
                     <ScrollFadeUp className='flex flex-col lg:flex-row mt-10 md:mt-20 gap-6 md:justify-between'>
-                        <ScrollSlideIn direction="left" className=' mx-auto md:mx-0 mb-8 md:mb-0 relative'>
-                            <FloatingImage>
-                                <Image
-                                    src={therapist}
-                                    alt='therapist'
-                                    width={450}
-                                    height={450}
-                                    className='w-[250px] h-auto sm:w-[350px] md:w-[450px]'
-                                />
-                                <Image
-                                    src={therapistTwo}
-                                    alt='therapist'
-                                    width={300}
-                                    height={300}
-                                    className='hidden md:block absolute -bottom-0 md:right-15 lg:-right-40 '
-                                />
-                            </FloatingImage>
-                        </ScrollSlideIn>
-                        <ScrollSlideIn direction="right" className='w-full md:w-auto pb-10'>
-                            <ProcessSteps />
-                        </ScrollSlideIn>
+                        <StepProvider>
+                            <ScrollSlideIn direction="left" className='mx-auto md:mx-0 mb-8 md:mb-0 relative'>
+                                <FloatingImage>
+                                    <StepImages />
+                                </FloatingImage>
+                            </ScrollSlideIn>
+                            <ScrollSlideIn direction="right" className='w-full md:w-auto pb-10'>
+                                <ProcessSteps />
+                            </ScrollSlideIn>
+                        </StepProvider>
                     </ScrollFadeUp>
                 </section>
 
@@ -195,12 +190,12 @@ const Homepage = () => {
                         {
                             src: signUp.src,
                             alt: 'appointment calendar',
-                            className: 'w-[180px] h-[300px] md:w-[200px] md:h-[300px] mt-10 lg:w-[350px] lg:h-[620px]'
+                            className: 'w-[160px] h-[280px] md:w-[200px] md:h-[300px] mt-10 lg:w-[350px] lg:h-[620px]'
                         },
                         {
                             src: signUpTwo.src,
                             alt: 'appointment details',
-                            className: 'w-[190px] h-[300px] md:w-[300px] md:h-[300px] mt-15 md:hidden lg:block lg:w-[420px] lg:h-[620px]'
+                            className: 'w-[200px] h-[280px] md:w-[300px] md:h-[300px] mt-15 md:hidden lg:block lg:w-[420px] lg:h-[620px]'
                         }
                     ]}
                     title='Sign up as a Therapist'
@@ -217,17 +212,17 @@ const Homepage = () => {
                     images={[
                         {
                             src: earn.src,
-                            alt: 'community chat',
+                            alt: 'earn',
                             className: 'w-[110px] h-[200px] md:w-[200px] md:h-[300px] lg:w-[300px] lg:h-[550px]'
                         },
                         {
                             src: earnTwo.src,
-                            alt: 'community profile',
+                            alt: 'earn',
                             className: 'w-[110px] h-[200px] md:hidden lg:block lg:w-[300px] lg:h-[550px]'
                         },
                         {
                             src: earnThree.src,
-                            alt: 'community members',
+                            alt: 'earn',
                             className: 'w-[110px] h-[200px] md:hidden lg:block lg:w-[300px] lg:h-[550px]'
                         }
                     ]}
@@ -266,6 +261,7 @@ const Homepage = () => {
                     </div>
                 </ScrollReveal>
             </section>
+            <Footer />
 
         </div>
     )
