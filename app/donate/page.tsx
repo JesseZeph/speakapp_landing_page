@@ -58,15 +58,15 @@ const Donate = () => {
 
                         <div className="space-y-4 text-justify">
                             <p>
-                                Therapy has long been underrated, especially in this part of the world. We have witnessed countless disturbing events caused by individuals labeled as mentally unstable or toxic—most times, victims of untreated trauma or someone else's pain passed on to them.
+                                Therapy has long been underrated, especially in this part of the world. We have witnessed countless disturbing events caused by individuals labeled as mentally unstable or toxic—most times, victims of untreated trauma or someone else&apos;s pain passed on to them.
                             </p>
 
                             <p>
-                                Mental illness isn't madness or psychosis, but a psychological disorder. It's simply when your mind isn't working the way it should, making it hard to feel good or handle daily affairs—most times confused for a clinical disorder.
+                                Mental illness isn&apos;t madness or psychosis, but a psychological disorder. It&apos;s simply when your mind isn&apos;t working the way it should, making it hard to feel good or handle daily affairs—most times confused for a clinical disorder.
                             </p>
 
                             <p>
-                                The SPEAK initiative is more than just an app, it's a movement. A movement designed to connect people to professional therapists and supportive communities, while also sensitizing and educating the world on the importance of mental wellness.
+                                The SPEAK initiative is more than just an app, it&apos;s a movement. A movement designed to connect people to professional therapists and supportive communities, while also sensitizing and educating the world on the importance of mental wellness.
                             </p>
 
                             <p>
@@ -74,11 +74,11 @@ const Donate = () => {
                             </p>
 
                             <p>
-                                While the need for mental wellness cannot be overemphasized, not everyone can afford therapy. That's where the SpeakApp donation platform comes in.
+                                While the need for mental wellness cannot be overemphasized, not everyone can afford therapy. That&apos;s where the SpeakApp donation platform comes in.
                             </p>
 
                             <p>
-                                We have created this website to give governments, private sector organizations, and individuals the opportunity to sponsor therapy sessions for those who need it most and can't afford it.
+                                We have created this website to give governments, private sector organizations, and individuals the opportunity to sponsor therapy sessions for those who need it most and can&apos;t afford it.
                             </p>
 
                             <p>
@@ -98,14 +98,14 @@ const Donate = () => {
                             </p>
 
                             <p>
-                                Let's protect our future by safeguarding our minds.<br />
-                                Let's promote sanity.<br />
-                                Let's create a safe space in a toxic world.<br />
-                                Let's support mental wellness in our society.
+                                Let&apos;s protect our future by safeguarding our minds.<br />
+                                Let&apos;s promote sanity.<br />
+                                Let&apos;s create a safe space in a toxic world.<br />
+                                Let&apos;s support mental wellness in our society.
                             </p>
 
                             <p>
-                                We may lose our society if we don't fight for a sane atmosphere.<br />
+                                We may lose our society if we don&apos;t fight for a sane atmosphere.<br />
                                 Join us. Give hope. Let them SPEAK.
                             </p>
 
