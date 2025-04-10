@@ -4,35 +4,38 @@ import React from 'react'
 import donateImage from '@/public/donate.png'
 import { Metadata } from 'next'
 
-export const metadata: Metadata = {
-    title: "Donate to SpeakApp - Support Mental Wellness Initiatives",
-    description: "Support mental wellness by donating to SpeakApp. Your contributions help provide therapy access to those in need, create job opportunities for certified therapists, and promote mental health awareness in our society.",
-    keywords: ["mental health donation", "therapy funding", "mental wellness support", "therapist support", "mental health initiative", "therapy access", "mental health charity"],
-    openGraph: {
+export async function generateMetadata(): Promise<Metadata> {
+
+    return {
         title: "Donate to SpeakApp - Support Mental Wellness Initiatives",
-        description: "Help us make therapy accessible to everyone. Your donation supports mental wellness programs and creates opportunities for certified therapists.",
-        url: 'https://speakapp.ltd/donate',
-        siteName: 'SpeakApp',
-        images: [
-            {
-                url: '/seo.png',
-                width: 1200,
-                height: 630,
-                alt: 'SpeakApp Donation Platform',
-            },
-        ],
-        locale: 'en_US',
-        type: 'website',
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: "Donate to SpeakApp - Support Mental Wellness Initiatives",
-        description: "Help us make therapy accessible to everyone. Your donation supports mental wellness programs and creates opportunities for certified therapists.",
-        images: ['/seo.png'],
-    },
-    alternates: {
-        canonical: '/donate',
-    },
+        description: "Support mental wellness by donating to SpeakApp. Your contributions help provide therapy access to those in need, create job opportunities for certified therapists, and promote mental health awareness in our society.",
+        keywords: ["mental health donation", "therapy funding", "mental wellness support", "therapist support", "mental health initiative", "therapy access", "mental health charity"],
+        openGraph: {
+            title: "Donate to SpeakApp - Support Mental Wellness Initiatives",
+            description: "Help us make therapy accessible to everyone. Your donation supports mental wellness programs and creates opportunities for certified therapists.",
+            url: 'https://speakapp.ltd/donate',
+            siteName: 'SpeakApp',
+            images: [
+                {
+                    url: '/seo.png',
+                    width: 1200,
+                    height: 630,
+                    alt: 'SpeakApp Donation Platform',
+                },
+            ],
+            locale: 'en_US',
+            type: 'website',
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: "Donate to SpeakApp - Support Mental Wellness Initiatives",
+            description: "Help us make therapy accessible to everyone. Your donation supports mental wellness programs and creates opportunities for certified therapists.",
+            images: ['/seo.png'],
+        },
+        alternates: {
+            canonical: '/donate',
+        },
+    }
 }
 
 const Donate = () => {
