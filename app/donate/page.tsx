@@ -2,6 +2,38 @@ import { ScrollReveal } from '@/components/ScrollEffects'
 import Image from 'next/image'
 import React from 'react'
 import donateImage from '@/public/donate.png'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+    title: "Donate to SpeakApp - Support Mental Wellness Initiatives",
+    description: "Support mental wellness by donating to SpeakApp. Your contributions help provide therapy access to those in need, create job opportunities for certified therapists, and promote mental health awareness in our society.",
+    keywords: ["mental health donation", "therapy funding", "mental wellness support", "therapist support", "mental health initiative", "therapy access", "mental health charity"],
+    openGraph: {
+        title: "Donate to SpeakApp - Support Mental Wellness Initiatives",
+        description: "Help us make therapy accessible to everyone. Your donation supports mental wellness programs and creates opportunities for certified therapists.",
+        url: 'https://speakapp.ltd/donate',
+        siteName: 'SpeakApp',
+        images: [
+            {
+                url: '/seo.png',
+                width: 1200,
+                height: 630,
+                alt: 'SpeakApp Donation Platform',
+            },
+        ],
+        locale: 'en_US',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: "Donate to SpeakApp - Support Mental Wellness Initiatives",
+        description: "Help us make therapy accessible to everyone. Your donation supports mental wellness programs and creates opportunities for certified therapists.",
+        images: ['/seo.png'],
+    },
+    alternates: {
+        canonical: '/donate',
+    },
+}
 
 const Donate = () => {
     return (
@@ -23,15 +55,15 @@ const Donate = () => {
 
                         <div className="space-y-4 text-justify">
                             <p>
-                                Therapy has long been underrated, especially in this part of the world. We have witnessed countless disturbing events caused by individuals labeled as mentally unstable or toxic—most times, victims of untreated trauma or someone else’s pain passed on to them.
+                                Therapy has long been underrated, especially in this part of the world. We have witnessed countless disturbing events caused by individuals labeled as mentally unstable or toxic—most times, victims of untreated trauma or someone else's pain passed on to them.
                             </p>
 
                             <p>
-                                Mental illness isn’t madness or psychosis, but a psychological disorder. It’s simply when your mind isn’t working the way it should, making it hard to feel good or handle daily affairs—most times confused for a clinical disorder.
+                                Mental illness isn't madness or psychosis, but a psychological disorder. It's simply when your mind isn't working the way it should, making it hard to feel good or handle daily affairs—most times confused for a clinical disorder.
                             </p>
 
                             <p>
-                                The SPEAK initiative is more than just an app, it’s a movement. A movement designed to connect people to professional therapists and supportive communities, while also sensitizing and educating the world on the importance of mental wellness.
+                                The SPEAK initiative is more than just an app, it's a movement. A movement designed to connect people to professional therapists and supportive communities, while also sensitizing and educating the world on the importance of mental wellness.
                             </p>
 
                             <p>
@@ -39,11 +71,11 @@ const Donate = () => {
                             </p>
 
                             <p>
-                                While the need for mental wellness cannot be overemphasized, not everyone can afford therapy. That’s where the SpeakApp donation platform comes in.
+                                While the need for mental wellness cannot be overemphasized, not everyone can afford therapy. That's where the SpeakApp donation platform comes in.
                             </p>
 
                             <p>
-                                We have created this website to give governments, private sector organizations, and individuals the opportunity to sponsor therapy sessions for those who need it most and can’t afford it.
+                                We have created this website to give governments, private sector organizations, and individuals the opportunity to sponsor therapy sessions for those who need it most and can't afford it.
                             </p>
 
                             <p>
@@ -63,14 +95,14 @@ const Donate = () => {
                             </p>
 
                             <p>
-                                Let’s protect our future by safeguarding our minds.<br />
-                                Let’s promote sanity.<br />
-                                Let’s create a safe space in a toxic world.<br />
-                                Let’s support mental wellness in our society.
+                                Let's protect our future by safeguarding our minds.<br />
+                                Let's promote sanity.<br />
+                                Let's create a safe space in a toxic world.<br />
+                                Let's support mental wellness in our society.
                             </p>
 
                             <p>
-                                We may lose our society if we don’t fight for a sane atmosphere.<br />
+                                We may lose our society if we don't fight for a sane atmosphere.<br />
                                 Join us. Give hope. Let them SPEAK.
                             </p>
 

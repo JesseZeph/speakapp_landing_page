@@ -15,8 +15,61 @@ const nunitoSans = Nunito_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Speak App",
-  description: "Landing page for Speak App",
+  title: "SpeakApp - Discover a safe space to share your thought",
+  description: "SpeakApp is a mobile platform connecting users with certified therapists for mental wellness support. Book audio or chat-based therapy sessions, access community support, and find the right therapist for your needs.",
+  keywords: ["mental health", "online therapy", "counseling", "therapist", "mental wellness", "therapy app", "mental health support", "online counseling", "therapist platform"],
+  authors: [{ name: "SpeakApp Team" }],
+  creator: "SpeakApp",
+  publisher: "SpeakApp",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://speakapp.ltd'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: "SpeakApp - Discover a safe space to share your thought",
+    description: "Book therapy sessions with certified professionals, access community support, and find mental wellness resources.",
+    url: 'https://speakapp.ltd',
+    siteName: 'SpeakApp',
+    images: [
+      {
+        url: '/seo.png',
+        width: 1200,
+        height: 630,
+        alt: 'SpeakApp - Mental Wellness Platform',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "SpeakApp - Discover a safe space to share your thought",
+    description: "Book therapy sessions with certified professionals, access community support, and find mental wellness resources.",
+    images: ['/seo.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  icons: {
+    icon: '/favi.png',
+    apple: '/favi.png',
+  },
+  verification: {
+    google: 'google-site-verification=dAthuprHP_etht6oOGGjMhZapRudt37m0QuMaF2t8Wk',
+  },
 };
 
 export default function RootLayout({
