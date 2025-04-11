@@ -3,7 +3,7 @@ import axios, { AxiosInstance } from "axios";
 import { showLoader } from "./apiUtils";
 import { useMainStore } from "@/store/mainStore";
 
-const baseURL = 'https://speakapp.up.railway.app/api/';
+const baseURL = process.env.NEXT_API_URL!;
 
 const api: AxiosInstance = axios.create({
     baseURL: baseURL,

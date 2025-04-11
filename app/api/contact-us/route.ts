@@ -6,13 +6,13 @@ export async function POST(req: NextRequest) {
 
 
         const mailerSend = new MailerSend({
-            apiKey: process.env.MAILERSEND_API_KEY! as string,
+            apiKey: process.env.NEXT_MAILERSEND_API_KEY! as string,
         });
 
-        const sentFrom = new Sender(process.env.NEXT_PUBLIC_SENDER_EMAIL!, "Speakapp");
+        const sentFrom = new Sender(process.env.NEXT_SENDER_EMAIL!, "Speakapp");
 
         const recipients = [
-            new Recipient(process.env.NEXT_PUBLIC_RECIPIENT_EMAIL!, "Speakapp")
+            new Recipient(process.env.NEXT_RECIPIENT_EMAIL!, "Speakapp")
         ];
 
         const emailParams = new EmailParams()
