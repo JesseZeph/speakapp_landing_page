@@ -123,7 +123,7 @@ const CheckoutContent = () => {
                     ) : (
                         <div className="text-center">
                             <h2 className="text-2xl font-bold mb-4 text-red-600">Payment Verification Failed</h2>
-                            <p className="mb-6">We couldn't verify your payment. Please try again or contact support.</p>
+                            <p className="mb-6">We couldn&apos;t verify your payment. Please try again or contact support.</p>
                             <Link href="/donate" className="bg-blue-500 text-white px-6 py-2 rounded-md">
                                 Try Again
                             </Link>
