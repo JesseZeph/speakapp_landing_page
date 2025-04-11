@@ -2,8 +2,9 @@
 
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
-export default function FailedPage() {
+function FailedPageContent() {
     const searchParams = useSearchParams();
     const reason = searchParams.get('reason');
 
@@ -30,5 +31,15 @@ export default function FailedPage() {
                 </div>
             </div>
         </div>
+    );
+}
+
+export default function FailedPage() {
+    return (
+        <Suspense fallback={<div className="flex items-center justify-center min-h-screen">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+        </div>}>
+            <FailedPageContent />
+        </Suspense>
     );
 }

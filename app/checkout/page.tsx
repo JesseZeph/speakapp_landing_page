@@ -1,7 +1,7 @@
 'use client'
 
 import { validateForm } from '@/lib/validator';
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import InputBox from '@/components/input-box';
 import { useDonationStore } from '@/store/user/donationStore';
 import { toast } from 'react-toastify';
@@ -13,7 +13,7 @@ interface MessageForm {
     message: string;
 }
 
-export default function Checkout() {
+function CheckoutContent() {
     const { makeDonation } = useDonationStore();
     const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -120,5 +120,15 @@ export default function Checkout() {
                 </button>
             </div>
         </div>
+    );
+}
+
+export default function Checkout() {
+    return (
+        <Suspense fallback={<div className="flex items-center justify-center min-h-screen">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+        </div>}>
+            <CheckoutContent />
+        </Suspense>
     );
 }
