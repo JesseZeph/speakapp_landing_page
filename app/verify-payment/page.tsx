@@ -13,7 +13,7 @@ function VerifyPaymentContent() {
 
     useEffect(() => {
         const verifyPayment = async () => {
-            const reference = searchParams.get('reference');
+            const reference = searchParams.get('reference') || searchParams.get('tx_ref');
 
             if (!reference) {
                 console.error('No reference found in URL');
