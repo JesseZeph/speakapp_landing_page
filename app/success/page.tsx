@@ -24,8 +24,8 @@ function SuccessPage() {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-20">
-            <div className="text-center bg-white">
+        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-10">
+            <div className="container mx-auto text-center bg-white rounded-lg p-10">
 
                 <h2 className="text-xl font-bold mb-4 text-green-600">Payment Successful!</h2>
                 <p className="mb-6">Thank you for your donation.</p>
