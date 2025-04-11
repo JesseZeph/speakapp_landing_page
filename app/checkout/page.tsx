@@ -1,7 +1,7 @@
 'use client'
 
 import { validateForm } from '@/lib/validator';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import InputBox from '@/components/input-box';
 import { useParams, useSearchParams } from 'next/navigation';
 import { useDonationStore } from '@/store/user/donationStore';
@@ -14,7 +14,7 @@ interface MessageForm {
     message: string;
 }
 
-const Checkout = () => {
+const CheckoutContent = () => {
     const { status } = useParams()
     const query = useSearchParams()
     const reference = query.get('reference')
@@ -134,6 +134,14 @@ const Checkout = () => {
                 )}
             </div>
         </div>
+    )
+}
+
+const Checkout = () => {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <CheckoutContent />
+        </Suspense>
     )
 }
 
