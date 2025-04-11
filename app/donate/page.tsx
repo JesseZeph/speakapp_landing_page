@@ -3,6 +3,7 @@ import Image from 'next/image'
 import React from 'react'
 import donateImage from '@/public/donate.png'
 import { Metadata } from 'next'
+import Link from 'next/link'
 
 export async function generateMetadata(): Promise<Metadata> {
 
@@ -77,7 +78,9 @@ const Donate = () => {
                             ))}
 
                             <div className='w-50 btn-primary cursor-pointer mt-10'>
-                                <p className='text-center'>Donate Now</p>
+                                <Link href="/checkout">
+                                    <p className='text-center'>Donate Now</p>
+                                </Link>
                             </div>
                         </div>
                     </div>

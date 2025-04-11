@@ -28,7 +28,9 @@ const ContactUs = () => {
         description: '',
         cancelText: '',
         confirmText: '',
-        onConfirm: () => { }
+        onConfirm: () => {
+            router.replace('/')
+        }
     });
 
     const showDialog = ({ title, description, cancelText, confirmText, onConfirm }: {
