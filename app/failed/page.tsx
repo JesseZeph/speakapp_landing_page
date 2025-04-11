@@ -17,15 +17,15 @@ function FailedPageContent() {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen">
-            <div className="text-center">
+        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-20">
+            <div className="text-center bg-white">
                 <h2 className="text-2xl font-bold mb-4 text-red-600">Payment Verification Failed</h2>
                 <p className="mb-6">{errorMessage}</p>
                 <div className="flex gap-4 justify-center">
-                    <Link href="/donate" className="bg-blue-500 text-white px-6 py-2 rounded-md">
+                    <Link href="/checkout" className="bg-primary text-white px-6 py-2 rounded-md">
                         Try Again
                     </Link>
-                    <Link href="/" className="bg-gray-500 text-white px-6 py-2 rounded-md">
+                    <Link href="/" className="bg-red-500 text-white px-6 py-2 rounded-md">
                         Return to Home
                     </Link>
                 </div>
