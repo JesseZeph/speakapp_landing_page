@@ -6,6 +6,7 @@ import InputBox from '@/components/input-box';
 import { useParams, useSearchParams } from 'next/navigation';
 import { useDonationStore } from '@/store/user/donationStore';
 import Link from 'next/link';
+import { toast } from 'react-toastify';
 
 interface MessageForm {
     amount: number
@@ -25,7 +26,7 @@ const CheckoutContent = () => {
     const { makeDonation } = useDonationStore()
 
     function donateToSpeak() {
-        const errors = validateForm("submit", "#contactUsForm");
+        const errors = validateForm("submit", "#checkoutForm");
         if (Object.values(errors).length > 0) {
             return;
         }
@@ -36,18 +37,25 @@ const CheckoutContent = () => {
                 email: newMessage.email,
                 message: newMessage.message
             }).then((response) => {
-                console.log('Donation response:', response);
-                if (response?.paymentLink) {
-                    console.log('Payment link:', response.paymentLink);
-                    localStorage.setItem('donationReference', response.reference);
-                    window.location.href = response.paymentLink;
-                } else {
-                    console.error('No payment link in response:', response);
+                if (!response) {
+                    toast.error('Failed to initiate payment. Please try again.');
+                    return;
                 }
+
+                if (response.paymentLink) {
+                    localStorage.setItem('donationReference', response.reference);
+                    // Use window.location.replace for more reliable redirects
+                    window.location.replace(response.paymentLink);
+                } else {
+                    toast.error('No payment link received. Please try again.');
+                }
+            }).catch((error) => {
+                console.error('Donation error:', error);
+                toast.error('Failed to process payment. Please try again.');
             });
         } catch (error) {
-            const axiosError = error as { response?: { data?: { message?: string } } };
-            console.error('Donation error:', axiosError);
+            console.error('Unexpected error:', error);
+            toast.error('An unexpected error occurred. Please try again.');
         }
     }
 
@@ -81,7 +89,7 @@ const CheckoutContent = () => {
     }
 
     return (
-        <div>
+        <div id="checkoutForm">
             <InputBox
                 value={newMessage.amount}
                 onChange={(ev) => updateMessage("amount", ev.target.value)}
