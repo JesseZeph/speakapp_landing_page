@@ -82,8 +82,9 @@ export async function POST(req: NextRequest) {
         await mailerSend.email.send(emailParams);
 
         return NextResponse.json({ message: 'Email sent successfully' }, { status: 200 });
-    } catch (error: any) {
+    } catch (error) {
         console.error('Error sending email:', error);
-        return NextResponse.json({ message: 'Failed to send email', error: error.message }, { status: 500 });
+        const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
+        return NextResponse.json({ message: 'Failed to send email', error: errorMessage }, { status: 500 });
     }
 }

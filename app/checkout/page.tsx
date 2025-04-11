@@ -2,9 +2,8 @@
 
 import { validateForm } from '@/lib/validator';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 import InputBox from '@/components/input-box';
-import { useParams, useRouter, useSearchParams } from 'next/navigation';
+import { useParams, useSearchParams } from 'next/navigation';
 import { useDonationStore } from '@/store/user/donationStore';
 import Link from 'next/link';
 
@@ -78,27 +77,9 @@ const Checkout = () => {
 
     function updateMessage(key: keyof MessageForm, value: string) {
         setMessage({ ...newMessage, [key]: value });
-        validateForm("submit", "#contactUsForm");
+        validateForm("submit", "#checkoutForm");
     }
 
-    const handleSubmit = async () => {
-        const errors = validateForm("submit", "#contactUsForm");
-        if (Object.values(errors).length > 0) {
-            return;
-        }
-        try {
-            await axios.post('/api/contact-us', newMessage);
-            setMessage({
-                amount: 0,
-                name: "",
-                email: "",
-                message: ""
-            });
-        } catch (error) {
-            const axiosError = error as { response?: { data?: { message?: string } } };
-            // showToast(axiosError?.response?.data?.message || 'Failed to Send Message, Please try again', '', 'error');
-        }
-    };
     return (
         <div>
             <InputBox
