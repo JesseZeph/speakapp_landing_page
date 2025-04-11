@@ -54,7 +54,7 @@ const StepImages: React.FC = () => {
             },
             {
                 src: bookingStepMini,
-                alt: 'Appointment details',
+                alt: 'Appointment detail',
                 width: 300,
                 height: 300,
                 className: 'hidden md:block absolute -bottom-0 md:right-15 lg:-right-40'
@@ -64,14 +64,14 @@ const StepImages: React.FC = () => {
         [
             {
                 src: callingStep,
-                alt: 'Calling screen',
+                alt: 'Calling image',
                 width: 450,
                 height: 450,
                 className: 'w-[250px] h-auto sm:w-[350px] md:w-[450px]'
             },
             {
                 src: textingStep,
-                alt: 'Texting screen',
+                alt: 'text image',
                 width: 300,
                 height: 300,
                 className: 'hidden md:block absolute -bottom-0 md:right-15 lg:-right-40'

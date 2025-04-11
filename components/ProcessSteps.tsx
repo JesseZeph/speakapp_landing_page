@@ -25,7 +25,7 @@ const ProcessSteps: React.FC = () => {
         },
         {
             number: '03',
-            title: 'Talk to a Therapist',
+            title: 'Talk to Therapists',
             description: 'Enjoy a safe space to share your thoughts, find clarity, and embrace peace.'
         }
     ];
