@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
         const sentFrom = new Sender(process.env.NEXT_PUBLIC_SENDER_EMAIL!, "SpeakappProduction");
 
         const recipients = [
-            new Recipient(process.env.NEXT_PUBLIC_RECIPIENT_EMAIL!, "Speakapp")
+            new Recipient(process.env.NEXT_PUBLIC_RECIPIENT_EMAIL!, "SpeakappProduction")
         ];
 
         const emailParams = new EmailParams()
