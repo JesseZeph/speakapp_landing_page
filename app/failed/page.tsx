@@ -17,8 +17,8 @@ function FailedPageContent() {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 py-40">
-            <div className="text-center bg-white">
+        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 py-5">
+            <div className="container mx-auto text-center bg-white rounded-lg py-40 px-10">
                 <h2 className="text-2xl font-bold mb-4 text-red-600">Payment Verification Failed</h2>
                 <p className="mb-6">{errorMessage}</p>
                 <div className="flex gap-4 justify-center">
