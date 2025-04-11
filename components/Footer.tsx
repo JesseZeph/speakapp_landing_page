@@ -52,7 +52,7 @@ const Footer = () => {
                 </div>
                 <div className='w-full h-[1px] bg-heading/15 mt-5' />
                 <div className='flex flex-row justify-between container mx-auto px-4 py-8'>
-                    <p className='text-sm text-heading'>© 2025 Speakapp</p>
+                    <p className='text-sm text-heading'>© 2025 SpeakApp Ltd</p>
                     <div className='flex flex-row gap-4'>
                         <Link href='/privacy' className='text-sm text-heading cursor-pointer'>Privacy</Link>
                         <Link href='/terms' className='text-sm text-heading cursor-pointer'>Terms</Link>

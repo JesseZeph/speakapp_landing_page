@@ -40,7 +40,7 @@ const StepImages: React.FC = () => {
                 alt: 'Therapist details',
                 width: 300,
                 height: 300,
-                className: 'hidden md:block absolute -bottom-0 md:right-15 lg:-right-40'
+                className: 'hidden md:block absolute -bottom-0 md:right-15 lg:-right-0'
             }
         ],
         // Step 2: Book a Session
@@ -57,7 +57,7 @@ const StepImages: React.FC = () => {
                 alt: 'Appointment detail',
                 width: 300,
                 height: 300,
-                className: 'hidden md:block absolute -bottom-0 md:right-15 lg:-right-40'
+                className: 'hidden md:block absolute -bottom-0 md:right-15 lg:-right-0'
             }
         ],
         // Step 3: Make Payment
@@ -74,7 +74,7 @@ const StepImages: React.FC = () => {
                 alt: 'text image',
                 width: 300,
                 height: 300,
-                className: 'hidden md:block absolute -bottom-0 md:right-15 lg:-right-40'
+                className: 'hidden md:block absolute -bottom-0 md:right-15 lg:-right-0'
             }
         ]
     ];

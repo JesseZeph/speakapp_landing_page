@@ -121,14 +121,14 @@ const Homepage = () => {
 
                 </ScrollFadeIn>
                 <section className='container mx-auto px-4 md:px-6'>
-                    <ScrollFadeUp className='flex flex-col lg:flex-row mt-10 md:mt-20 gap-6 md:justify-between'>
+                    <ScrollFadeUp className='flex flex-col lg:flex-row mt-10 md:mt-20 gap-10 md:gap-20 lg:gap-32 md:justify-between'>
                         <StepProvider>
-                            <ScrollSlideIn direction="left" className='mx-auto md:mx-0 mb-8 md:mb-0 relative'>
+                            <ScrollSlideIn direction="left" className='mb-8 md:mb-0 relative w-full lg:w-1/2'>
                                 <FloatingImage>
                                     <StepImages />
                                 </FloatingImage>
                             </ScrollSlideIn>
-                            <ScrollSlideIn direction="right" className='w-full md:w-auto pb-10'>
+                            <ScrollSlideIn direction="right" className='pb-10 w-full lg:w-1/2'>
                                 <ProcessSteps />
                             </ScrollSlideIn>
                         </StepProvider>
