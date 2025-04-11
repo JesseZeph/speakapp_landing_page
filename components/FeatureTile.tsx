@@ -268,7 +268,7 @@ export const AnimatedFeatureTileReverse = ({
 
                     <ScrollSlideIn
                         direction={imageDirection}
-                        className={`flex flex-row relative translate-x-8 md:translate-x-0 mt-10 ${imageContainerClassName}`}
+                        className={`flex flex-row relative translate-x-8 md:translate-x-0 mt-10 w-1/2 ${imageContainerClassName}`}
                     >
                         {images.map((img, index) => (
                             floatingImages ? (
