@@ -179,6 +179,8 @@ const Homepage = () => {
                 ]}
                 imageContainerClassName='rotate-4'
                 backgroundColor='bg-lime-50/50'
+                textColor='text-lime-500'
+                bgColor='bg-lime-500'
             />
 
 
@@ -233,6 +235,8 @@ const Homepage = () => {
                 ]}
                 imageContainerClassName='md:rotate-0 mt-10'
                 backgroundColor='bg-lime-50/50'
+                textColor='text-lime-500'
+                bgColor='bg-lime-500'
             />
 
 
