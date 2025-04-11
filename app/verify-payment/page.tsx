@@ -30,14 +30,14 @@ function VerifyPaymentContent() {
                     setVerificationStatus('success');
                     // Redirect to success page after short delay
                     setTimeout(() => {
-                        router.push('/donate/success?verified=true');
+                        router.push('/success?verified=true');
                     }, 1000);
                 } else {
                     console.log('Payment verification failed');
                     setVerificationStatus('failed');
                     // Redirect to failure page after short delay
                     setTimeout(() => {
-                        router.push('/donate/failed?reason=verification');
+                        router.push('/failed?reason=verification');
                     }, 1000);
                 }
             } catch (error) {
