@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
             apiKey: process.env.NEXT_PUBLIC_MAILERSEND_API_KEY! as string,
         });
 
-        const sentFrom = new Sender(process.env.NEXT_PUBLIC_SENDER_EMAIL!, "Speakapp");
+        const sentFrom = new Sender(process.env.NEXT_PUBLIC_SENDER_EMAIL!, "SpeakappProduction");
 
         const recipients = [
             new Recipient(process.env.NEXT_PUBLIC_RECIPIENT_EMAIL!, "Speakapp")
