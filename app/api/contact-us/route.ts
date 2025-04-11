@@ -9,10 +9,10 @@ export async function POST(req: NextRequest) {
             apiKey: process.env.MAILERSEND_API_KEY! as string,
         });
 
-        const sentFrom = new Sender("MS_axlWzn@test-r83ql3pw57zgzw1j.mlsender.net", "Speakapp");
+        const sentFrom = new Sender(process.env.NEXT_PUBLIC_SENDER_EMAIL!, "Speakapp");
 
         const recipients = [
-            new Recipient("techfusionhub@gmail.com", "Speakapp")
+            new Recipient(process.env.NEXT_PUBLIC_RECIPIENT_EMAIL!, "Speakapp")
         ];
 
         const emailParams = new EmailParams()

@@ -44,8 +44,13 @@ const CheckoutContent = () => {
 
                 if (response.paymentLink) {
                     localStorage.setItem('donationReference', response.reference);
-                    // Use window.location.replace for more reliable redirects
-                    window.location.replace(response.paymentLink);
+                    console.log("Executing redirect now");
+                    window.location.href = response.paymentLink;
+
+                    // Add fallback for debugging
+                    setTimeout(() => {
+                        console.log("Redirect may have failed, still on page after 2 seconds");
+                    }, 2000);
                 } else {
                     toast.error('No payment link received. Please try again.');
                 }
