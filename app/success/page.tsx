@@ -3,8 +3,8 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-
-export default function SuccessPage() {
+import { Suspense } from 'react';
+function SuccessPage() {
     const searchParams = useSearchParams();
     const verified = searchParams.get('verified') === 'true';
     const [showPage, setShowPage] = useState(false);
@@ -33,5 +33,15 @@ export default function SuccessPage() {
                 </Link>
             </div>
         </div>
+    );
+}
+
+export default function SuccessPageWrapper() {
+    return (
+        <Suspense fallback={<div className="flex items-center justify-center min-h-screen">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+        </div>}>
+            <SuccessPage />
+        </Suspense>
     );
 }
