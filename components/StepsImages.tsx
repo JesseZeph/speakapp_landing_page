@@ -8,8 +8,9 @@ import therapist from '@/public/therapist-screen.png';
 import therapistTwo from '@/public/therapist-screen-2.png';
 import bookingStep from '@/public/booking-step.png';
 import bookingStepMini from '@/public/booking-step-mini.png';
-import paymentStep from '@/public/booking-step-2.png'
-import paymentStepMini from '@/public/booking-step-mini-2.png';
+import callingStep from '@/public/calling.png';
+import textingStep from '@/public/texting.png';
+
 
 
 
@@ -62,15 +63,15 @@ const StepImages: React.FC = () => {
         // Step 3: Make Payment
         [
             {
-                src: paymentStep,
-                alt: 'Payment screen',
+                src: callingStep,
+                alt: 'Calling screen',
                 width: 450,
                 height: 450,
                 className: 'w-[250px] h-auto sm:w-[350px] md:w-[450px]'
             },
             {
-                src: paymentStepMini,
-                alt: 'Payment confirmation',
+                src: textingStep,
+                alt: 'Texting screen',
                 width: 300,
                 height: 300,
                 className: 'hidden md:block absolute -bottom-0 md:right-15 lg:-right-40'
