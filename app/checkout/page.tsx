@@ -16,14 +16,48 @@ interface MessageForm {
 }
 
 const CheckoutContent = () => {
-    const { status } = useParams()
-    const query = useSearchParams()
-    const reference = query.get('reference')
+    const { status } = useParams();
+    const query = useSearchParams();
+    const reference = query.get('reference');
 
-    const [paymentVerified, setPaymentVerified] = useState(false)
-    const [redirectUrl, setRedirectUrl] = useState('/')
-    const { confirmDonationPayment } = useDonationStore()
-    const { makeDonation } = useDonationStore()
+    const [isVerifying, setIsVerifying] = useState(false);
+    const [verificationComplete, setVerificationComplete] = useState(false);
+    const [paymentVerified, setPaymentVerified] = useState(false);
+    const { confirmDonationPayment, makeDonation } = useDonationStore();
+
+    const [newMessage, setMessage] = useState<MessageForm>({
+        amount: 0,
+        name: "",
+        email: "",
+        message: "",
+    });
+
+    // Handle the verification when redirected back from Flutterwave
+    useEffect(() => {
+        const verifyPayment = async () => {
+            if (status === 'success' && reference && !verificationComplete) {
+                setIsVerifying(true);
+                try {
+                    // Call the confirmation endpoint with the reference in the request body
+                    const paymentOk = await confirmDonationPayment(reference);
+                    setPaymentVerified(paymentOk);
+                } catch (error) {
+                    console.error('Payment verification error:', error);
+                    setPaymentVerified(false);
+                } finally {
+                    setIsVerifying(false);
+                    setVerificationComplete(true);
+                }
+            }
+        };
+
+        verifyPayment();
+    }, [confirmDonationPayment, status, reference, verificationComplete]);
+
+    function updateMessage(key: keyof MessageForm, value: string) {
+        setMessage({ ...newMessage, [key]: value });
+        validateForm("submit", "#checkoutForm");
+    }
 
     function donateToSpeak() {
         const errors = validateForm("submit", "#checkoutForm");
@@ -64,35 +98,43 @@ const CheckoutContent = () => {
         }
     }
 
-    useEffect(() => {
-        const confirmPayment = async () => {
-            if (status === 'success' && reference) {
-                const paymentOk = await confirmDonationPayment(reference);
-                if (paymentOk) {
-                    setPaymentVerified(true);
-                    setRedirectUrl('/');
-                } else {
-                    setPaymentVerified(false);
-                    setRedirectUrl('/donate');
-                }
-            }
-        };
+    // Render different UI based on payment status
+    if (status === 'success') {
+        if (isVerifying) {
+            return (
+                <div className="flex flex-col items-center justify-center min-h-screen">
+                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+                    <p className="mt-4 text-lg text-center">Verifying your payment...</p>
+                </div>
+            );
+        }
 
-        confirmPayment();
-    }, [confirmDonationPayment, status, reference]);
-
-    const [newMessage, setMessage] = useState<MessageForm>({
-        amount: 0,
-        name: "",
-        email: "",
-        message: "",
-    });
-
-    function updateMessage(key: keyof MessageForm, value: string) {
-        setMessage({ ...newMessage, [key]: value });
-        validateForm("submit", "#checkoutForm");
+        if (verificationComplete) {
+            return (
+                <div className="flex flex-col items-center justify-center min-h-screen">
+                    {paymentVerified ? (
+                        <div className="text-center">
+                            <h2 className="text-2xl font-bold mb-4 text-green-600">Payment Successful!</h2>
+                            <p className="mb-6">Thank you for your donation.</p>
+                            <Link href="/" className="bg-blue-500 text-white px-6 py-2 rounded-md">
+                                Return to Home
+                            </Link>
+                        </div>
+                    ) : (
+                        <div className="text-center">
+                            <h2 className="text-2xl font-bold mb-4 text-red-600">Payment Verification Failed</h2>
+                            <p className="mb-6">We couldn't verify your payment. Please try again or contact support.</p>
+                            <Link href="/donate" className="bg-blue-500 text-white px-6 py-2 rounded-md">
+                                Try Again
+                            </Link>
+                        </div>
+                    )}
+                </div>
+            );
+        }
     }
 
+    // Default: Show donation form
     return (
         <div id="checkoutForm">
             <InputBox
@@ -137,25 +179,20 @@ const CheckoutContent = () => {
             />
 
             <div>
-                <button onClick={donateToSpeak} className='bg-blue-500 text-white px-4 py-2 rounded-md'>
-                    <p>Checkout</p>
+                <button onClick={donateToSpeak} className="bg-blue-500 text-white px-4 py-2 rounded-md">
+                    Checkout
                 </button>
-                {status === 'success' && (
-                    <Link href={redirectUrl}>
-                        {paymentVerified ? 'Back to home' : 'Try again'}
-                    </Link>
-                )}
             </div>
         </div>
-    )
-}
+    );
+};
 
 const Checkout = () => {
     return (
         <Suspense fallback={<div>Loading...</div>}>
             <CheckoutContent />
         </Suspense>
-    )
-}
+    );
+};
 
-export default Checkout
+export default Checkout;
