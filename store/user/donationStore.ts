@@ -52,7 +52,7 @@ export const useDonationStore = create<DonationStore>((set) => ({
     },
     confirmDonationPayment: async (reference: string) => {
         try {
-            const response = await api.post('verify', {
+            const response = await api.post('donation/verify', {
                 reference: reference,
             });
             if (response.status === 200) {
