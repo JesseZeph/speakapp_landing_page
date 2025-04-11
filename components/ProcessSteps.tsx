@@ -25,8 +25,8 @@ const ProcessSteps: React.FC = () => {
         },
         {
             number: '03',
-            title: 'Make your Payment',
-            description: 'Make your payment and enjoy a safe space to share your thoughts, find clarity, and embrace peace.'
+            title: 'Talk to a Therapist',
+            description: 'Enjoy a safe space to share your thoughts, find clarity, and embrace peace.'
         }
     ];
 

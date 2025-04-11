@@ -113,7 +113,7 @@ function CheckoutContent() {
             <div className="mt-6">
                 <button
                     onClick={donateToSpeak}
-                    className="w-full bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors"
+                    className="w-full bg-primary text-white px-4 py-2 rounded-md hover:bg-primary/80 transition-colors"
                     disabled={isSubmitting}
                 >
                     {isSubmitting ? 'Processing...' : 'Checkout'}
@@ -126,7 +126,7 @@ function CheckoutContent() {
 export default function Checkout() {
     return (
         <Suspense fallback={<div className="flex items-center justify-center min-h-screen">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 bg-primary"></div>
         </div>}>
             <CheckoutContent />
         </Suspense>
