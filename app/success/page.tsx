@@ -24,7 +24,7 @@ function SuccessPage() {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-5">
+        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 py-40">
             <div className="container mx-auto text-center bg-white rounded-lg py-2 px-10">
 
                 <h2 className="text-xl font-bold mb-4 text-green-600">Payment Successful!</h2>
