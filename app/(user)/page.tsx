@@ -140,7 +140,7 @@ const Homepage = () => {
                     {
                         src: appointment.src,
                         alt: 'appointment calendar',
-                        className: 'w-[180px] h-[300px] md:w-[200px] md:h-[300px] mt-10 lg:w-[300px] lg:h-[550px] '
+                        className: 'w-[180px] h-[300px] md:w-[180px] md:h-[300px] mt-10 lg:w-[300px] lg:h-[550px] '
                     },
                     {
                         src: appointmentTwo.src,
@@ -157,7 +157,7 @@ const Homepage = () => {
                     {
                         src: community.src,
                         alt: 'community chat',
-                        className: 'w-[100px] h-[190px] md:w-[200px] md:h-[300px] mt-10 md:mt-5 lg:w-[250px] lg:h-[480px]'
+                        className: 'w-[100px] h-[190px] md:w-[180px] md:h-[300px] mt-10 md:mt-5 lg:w-[250px] lg:h-[480px]'
                     },
                     {
                         src: communityTwo.src,
@@ -188,7 +188,7 @@ const Homepage = () => {
                     {
                         src: signUp.src,
                         alt: 'appointment calendar',
-                        className: 'w-[160px] h-[280px] md:w-[200px] md:h-[300px] mt-10 lg:w-[300px] lg:h-[530px]'
+                        className: 'w-[160px] h-[280px] md:w-[180px] md:h-[300px] mt-10 lg:w-[300px] lg:h-[530px]'
                     },
                     {
                         src: signUpTwo.src,
@@ -211,7 +211,7 @@ const Homepage = () => {
                     {
                         src: earn.src,
                         alt: 'earn',
-                        className: 'w-[110px] h-[200px] md:w-[200px] md:h-[300px] lg:w-[250px] lg:h-[480px]'
+                        className: 'w-[110px] h-[200px] md:w-[180px] md:h-[300px] lg:w-[250px] lg:h-[480px]'
                     },
                     {
                         src: earnTwo.src,
