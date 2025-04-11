@@ -3,8 +3,9 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { useDonationStore } from '@/store/user/donationStore';
+import { Suspense } from 'react';
 
-export default function VerifyPayment() {
+function VerifyPaymentContent() {
     const searchParams = useSearchParams();
     const router = useRouter();
     const [verificationStatus, setVerificationStatus] = useState('verifying');
@@ -74,5 +75,15 @@ export default function VerifyPayment() {
                 </div>
             )}
         </div>
+    );
+}
+
+export default function VerifyPayment() {
+    return (
+        <Suspense fallback={<div className="flex items-center justify-center min-h-screen">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+        </div>}>
+            <VerifyPaymentContent />
+        </Suspense>
     );
 }
