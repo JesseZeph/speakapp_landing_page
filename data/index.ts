@@ -5,7 +5,8 @@ export const termsSections = [
     { "id": "description-of-services", "title": "Description of Services" },
     { "id": "user-representations", "title": "User Representations" },
     { "id": "therapist-requirements", "title": "Therapist Requirements" },
-    { "id": "appointments", "title": "Appointments and Cancellations" },
+    { "id": "appointments", "title": "Appointments" },
+    { "id": "external-communication", "title": "External Communication" },
     { "id": "fees-and-payments", "title": "Fees, Payments, and Therapist Earnings" },
     { "id": "wallet-and-withdrawals", "title": "Wallet and Withdrawals" },
     { "id": "intellectual-property", "title": "Intellectual Property" },
@@ -47,16 +48,21 @@ export const termsContentSections = [
         "title": "Therapist Requirements",
         "content": "Therapists must provide valid certification and identification. SpeakApp reserves the right to verify these documents and may reject or remove therapists who do not meet the platform’s professional standards."
     },
-    {
+   {
         "id": "appointments",
-        "title": "Appointments and Cancellations",
-        "content": "Clients can book sessions with available therapists. Sessions may be canceled or rescheduled within the allowed timeframe. No-shows or late cancellations may result in forfeited payments, subject to platform policy."
+        "title": "Appointments",
+        "content": "Clients can book sessions with available therapists directly through the SpeakApp platform. At this time, rescheduling or canceling existing appointments is not supported. Please ensure availability before booking, as missed sessions are not eligible for refunds."
     },
     {
         "id": "fees-and-payments",
         "title": "Fees, Payments, and Therapist Earnings",
         "content": "Clients pay for therapy sessions through the platform using secure gateways. Therapists earn a percentage of the client’s payment, credited to their wallet after session completion. SpeakApp may retain a service fee."
     },
+    {
+  "id": "external-communication",
+  "title": "External Communication and Off-Platform Sessions",
+  "content": "All communications and therapy sessions must be conducted within the SpeakApp platform. Attempting to take conversations or sessions outside the app—whether through chat, calls, or third-party tools—is strictly prohibited. This protects the privacy, safety, and integrity of both clients and therapists. Violation of this policy may result in suspension or permanent account deactivation."
+},
     {
         "id": "wallet-and-withdrawals",
         "title": "Wallet and Withdrawals",
