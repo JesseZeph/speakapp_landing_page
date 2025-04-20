@@ -37,9 +37,9 @@ const Header = () => {
                 {/* Desktop Menu */}
                 <div className='hidden md:flex flex-row items-center justify-between max-w-2xl gap-20 cursor-pointer'>
                     <div className='flex flex-row items-center gap-10 mr-10'>
-                        <Link href='/donate'>
+                        {/* <Link href='/donate'>
                             <p className={pathname === '/donate' ? 'text-lime-500 font-semibold' : ''}>Donate</p>
-                        </Link>
+                        </Link> */}
                         <Link href='/privacy'>
                             <p className={pathname === '/privacy' ? 'text-lime-500 font-semibold' : ''}>Privacy Policy</p>
                         </Link>

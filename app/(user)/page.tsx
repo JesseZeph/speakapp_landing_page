@@ -74,7 +74,7 @@ const Homepage = () => {
         }
     }
     return (
-        <div className='w-full h-screen flex flex-col overflow-x-hidden'>
+        <div className='w-full h-screen flex flex-col overflow-x-hidden scroll-smooth'>
 
             <ScrollFadeIn>
                 <section className='bg-light md:pt-20 px-4 sm:px-6 md:px-8 relative'>
