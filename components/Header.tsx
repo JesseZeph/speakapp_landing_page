@@ -40,11 +40,11 @@ const Header = () => {
                         {/* <Link href='/donate'>
                             <p className={pathname === '/donate' ? 'text-lime-500 font-semibold' : ''}>Donate</p>
                         </Link> */}
-                        <Link href='/privacy'>
-                            <p className={pathname === '/privacy' ? 'text-lime-500 font-semibold' : ''}>Privacy Policy</p>
+                        <Link href='/privacy-policy'>
+                            <p className={pathname === '/privacy-policy' ? 'text-lime-500 font-semibold' : ''}>Privacy Policy</p>
                         </Link>
-                        <Link href='/terms'>
-                            <p className={pathname === '/terms' ? 'text-lime-500 font-semibold' : ''}>Terms and Conditions</p>
+                        <Link href='/terms-and-conditions'>
+                            <p className={pathname === '/terms-and-conditions' ? 'text-lime-500 font-semibold' : ''}>Terms and Conditions</p>
                         </Link>
                     </div>
                     <div>
